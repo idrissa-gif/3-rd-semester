@@ -2,10 +2,10 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-map<int,int> pairSum(int arr[], int n, int sum)
+unordered_map<int,int> pairSum(int arr[], int n, int sum)
 {
-    map<int,int> a;
-    map<int,int> HashSet;
+    unordered_map<int,int> a;
+    unordered_map<int,int> HashSet;
     for(int i=0 ; i<n ; i++) 
     {
         if(HashSet.find(arr[i])==HashSet.end()) HashSet.insert(i,arr[i]);
@@ -26,7 +26,7 @@ int main()
     for (int i = 0; i < n; i++)
         cin >> arr[n];
     cin >> sum;
-    map<int,int> a = pairSum(arr, n, sum);
+    unordered_map<int,int> a = pairSum(arr, n, sum);
     for (auto i : a)
         cout << '(' << i.first << ", " << i.second << ')' << ' ';
     
