@@ -17,4 +17,7 @@ int main()
         cin >> arr[n];
     cin >> sum;
     vector<pair<int, int>> a = pairSum(arr, n, sum);
+    for (auto i : a)
+        cout << '(' << i.first << ", " << i.second << ')' << ' ';
+    return 0;
 }
