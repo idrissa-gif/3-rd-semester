@@ -29,6 +29,7 @@ int main()
     {
         cin >> arr[i];
     }
-    mostfrequent(arr, size);
+    pair<int, int> a = mostfrequent(arr, size);
+    cout << a.first << " " << a.second << endl;
     return 0;
 }
