@@ -2,43 +2,33 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-
-bool issubarray(vector<int> a, vector<int> b)
+pair<int, int> mostfrequent(int arr[], int sze)
 {
-    set<int> hashSet;
-    for (auto i : a)
+    int n, max = INT_MIN;
+    unordered_map<int, int> HashSet;
+    for (int i = 0; i < sze; i++)
     {
-        hashSet.insert(i);
+        HashSet[arr[i]]++;
     }
-    for (auto j : b)
+    for (auto j : HashSet)
     {
-        if (hashSet.find(j) == hashSet.end())
-            return false;
+        if (j.second > max)
+        {
+            max = j.second;
+            n = j.first;
+        }
     }
-    return true;
+    return pair<int, int>(n, max);
 }
-
 int main()
 {
-    int size_a, size_b;
-    cin >> size_a >> size_b;
-    vector<int> a_arr(size_a), b_arr(size_b);
-    for (int i = 0; i < size_a; i++)
+    int size;
+    cin >> size;
+    int arr[size];
+    for (int i = 0; i < size; i++)
     {
-        int a;
-        cin >> a;
-        a_arr.push_back(a);
+        cin >> arr[i];
     }
-    for (int i = 0; i < size_b; i++)
-    {
-        int b;
-        cin >> b;
-        b_arr.push_back(b);
-    }
-    bool ch = issubarray(a_arr, b_arr);
-    if (ch)
-        cout << "B is the subarray of the array A" << endl;
-    else
-        cout << "B is not the subarray of the array A" << endl;
+    mostfrequent(arr, size);
     return 0;
 }
