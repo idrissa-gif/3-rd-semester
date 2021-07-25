@@ -5,13 +5,16 @@ using namespace std;
 map<int,int> pairSum(int arr[], int n, int sum)
 {
     map<int,int> a;
-    set<int> HashSet;
-    for(int i=0 ; i<n ; i++) HashSet.insert(arr[i]);
+    map<int,int> HashSet;
+    for(int i=0 ; i<n ; i++) 
+    {
+        if(HashSet.find(arr[i]==HashSet.end()) HashSet.insert(i,arr[i]);
+    }
     for(int i=0 ; i<n ; i++)
     {
         int s=sum-arr[i];
         if(a.find(arr[i])==a.end()) i++;
-        else if(HashSet.find(s)!=HashSet.end()) a.insert(arr[i],s);
+        else  a.insert(arr[i],s);
     }
     return a;
 }
