@@ -8,7 +8,7 @@ map<int,int> pairSum(int arr[], int n, int sum)
     map<int,int> HashSet;
     for(int i=0 ; i<n ; i++) 
     {
-        if(HashSet.find(arr[i]==HashSet.end()) HashSet.insert(i,arr[i]);
+        if(HashSet.find(arr[i])==HashSet.end()) HashSet.insert(i,arr[i]);
     }
     for(int i=0 ; i<n ; i++)
     {
